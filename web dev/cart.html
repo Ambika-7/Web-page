@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <section id="header">
+        <!-- add logo image -->
+        <a href="#"><img src="blisslogo.jpg" class="logo" alt=""></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active"href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li> 
+            </ul>
+        </div>
+    </section>
+
+    <section id="page-header3" class="about-header">
+        <h2>#let's_talk</h2>
+        <p>LEAVE A FEEDBACK, We love to hear from you!</p>
+    </section>
+
+    <!-- <section id="cart" class="section-p1">
+        <table width=100%>
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="book3.jpg" alt="" class="cart-img"></td>
+                    <td>Self-help book</td>
+                    <td>₹299/-</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₹299/-</td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="flower2.jpg" alt="" class="cart-img"></td>
+                    <td>Flower-bouquet</td>
+                    <td>₹299/-</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₹299/-</td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="Cheesecake.jpg" alt="" class="cart-img"></td>
+                    <td>Soft and fluffy fresh cheesecake</td>
+                    <td>₹499/-</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₹499/-</td>
+                </tr>
+            </tbody>
+        </table>
+    </section> -->
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="book3.jpg" alt="" class="cart-img"></td>
+                    <td>Self-help book</td>
+                    <td class="price">₹299</td>
+                    <td><input type="number" value="1" min="1" class="quantity"></td>
+                    <td class="subtotal">₹299</td>
+                </tr>
+    
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="flower2.jpg" alt="" class="cart-img"></td>
+                    <td>Flower-bouquet</td>
+                    <td class="price">₹299</td>
+                    <td><input type="number" value="1" min="1" class="quantity"></td>
+                    <td class="subtotal">₹299</td>
+                </tr>
+    
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="Cheesecake.jpg" alt="" class="cart-img"></td>
+                    <td>Soft and fluffy fresh cheesecake</td>
+                    <td class="price">₹499</td>
+                    <td><input type="number" value="1" min="1" class="quantity"></td>
+                    <td class="subtotal">₹499</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+                                                            <!-- javascript -->
+
+
+    <script>
+        // Function to calculate subtotal based on quantity change
+        function calculateSubtotal(row) {
+            const price = parseInt(row.querySelector('.price').innerText.replace('₹', '')); // Get price
+            const quantity = parseInt(row.querySelector('.quantity').value); // Get quantity
+            const subtotal = price * quantity; // Calculate subtotal
+            row.querySelector('.subtotal').innerText = '₹' + subtotal; // Update subtotal in the table
+        }
+    
+        // Add event listeners to each quantity input
+        document.querySelectorAll('.quantity').forEach(input => {
+            input.addEventListener('input', function() {
+                const row = input.closest('tr'); // Get the current row
+                calculateSubtotal(row); // Update subtotal for that row
+            });
+        });
+    </script>
+    
+    <section id="cart-add" class=" section-p1 ">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div> <input type="text" placeholder="Enter Your Coupon">
+            <button class="normal"> APPLY </button>
+        </div>
+        </div>
+        <div id="subtotal">
+            <h3>Cart totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>₹1097/-</td>
+                </tr>
+
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+
+                </tr>
+
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>₹1097/-</strong></td>
+                </tr>
+            </table>
+            <button class="normal">Proceed to checkout</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1" src="blisslogo.jpg" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>strong>BML Munjal University, Kapriwas, Dharuhera, Gate No.2</p>
+            <p><strong>Phone:</strong> +91 9462396364 / +91 8797843073</p>
+            <p><strong>Hours:</strong>10:00 - 20:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram" onclick="window.location.href= 'https://www.instagram.com/bhumi_gupta_30?igsh=MXNsdXd5cndzdjhucA=='"></i>
+                    <i class="fab fa-pinterest-p"  onclick="window.location.href='https://in.pinterest.com'"></i>
+                    <i class="fab fa-youtube" onclick="window.location.href='https://www.youtube.com/'"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Delievery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="playstorelogo.jpg" alt="">
+                <img src="appleplaystore.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img class="pay" src="pay.jpg" alt="">
+        </div>
+
+        <div class="copyright">
+            <p> &#169 2024, Ambika, Bhumika WEB DEV. Project - HTML CSS JAVASCRIPT Ecommerce</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

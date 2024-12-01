@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <section id="header">
+        <!-- add logo image -->
+        <a href="#"><img src="blisslogo.jpg" class="logo" alt=""></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="main.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li> 
+            </ul>
+        </div>
+    </section>
+
+    <!-- <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="s1.jpg" width="100%" id="MainImg" alt="">
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="s2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="s5.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="s6.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="s4.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="single-pro-details">
+            <h6>Home / Cakes</h6>
+            <h4>Chocolate loaded Cakes</h4>
+            <h2>₹499</h2>
+            <select>
+                <option>Select quantity & pounds</option>
+                <option>1 pound</option>
+                <option>2 pound</option>
+                <option>3 pound</option>
+                <option>I pc of 2 pound</option>
+                <option>II pcs of 3 pound</option>
+            </select>
+            <input type="number" value="1" min="1">
+            <button class="normal">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span>This cake is made up with Deep cocoa taste which gives rich chocolate flavor<br>
+            Moist in texture,soft and even in texture with balanced sweetness,<br>
+            have deliciously inviting chocolate aroma because of rich ingredients like vanilla<br>
+            and have a glossy finishing from the frosting which tastes velvety in bite.</span>
+        </div>
+    </section> -->
+
+    <section id="prodetails" class="section-p1"> 
+        <div class="single-pro-image">
+            <img src="s1.jpg" width="100%" id="MainImg" alt="">
+    
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="s2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="s5.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="s6.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="s4.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="single-pro-details">
+            <h6>Home / Cakes</h6>
+            <h4>Chocolate loaded Cakes</h4>
+            <h2 id="price">₹499</h2>
+            <select>
+                <option>Select quantity & pounds</option>
+                <option>1 pound</option>
+                <option>2 pound</option>
+                <option>3 pound</option>
+                <option>1 pc of 2 pounds</option>
+                <option>2 pcs of 3 pounds</option>
+            </select>
+            <input type="number" id="quantity" value="1" min="1">
+            <button class="normal">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span>This cake is made up with Deep cocoa taste which gives rich chocolate flavor.<br>
+            Moist in texture, soft and even in texture with balanced sweetness,<br>
+            have deliciously inviting chocolate aroma because of rich ingredients like vanilla<br>
+            and have a glossy finishing from the frosting which tastes velvety in bite.</span>
+        </div>
+    </section>
+    
+                                                                <!-- javascript -->
+
+    <script>
+        const basePrice = 499; // Set base price of the item
+        const quantityInput = document.getElementById('quantity'); // Get the quantity input
+        const priceDisplay = document.getElementById('price'); // Get the price display element
+    
+        // Function to update the total price
+        function updatePrice() {
+            const quantity = parseInt(quantityInput.value); // Get current quantity
+            const totalPrice = basePrice * quantity; // Calculate total price
+            priceDisplay.innerText = '₹' + totalPrice; // Update the price display
+        }
+    
+        // Add event listener to the quantity input to call updatePrice on change
+        quantityInput.addEventListener('input', updatePrice);
+    
+        // Initial price update on page load
+        updatePrice();
+    </script>
+    
+
+    <section id="product1" class=".section-p1">
+        <h2>Featured Products</h2>
+        <p>New Arrivals Collection</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="donutimg.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5>Freshly Baked Donuts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹99/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="Cheesecake.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5> Cotton Milk Cheesecake</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Selling at ₹499/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="biscuits.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5>Crisp Chocolate Cookies</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="Cake.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5>Sponge Cakes</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹599/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1" src="blisslogo.jpg" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>strong>BML Munjal University, Kapriwas, Dharuhera, Gate No.2</p>
+            <p><strong>Phone:</strong> +91 9462396364 / +91 8797843073</p>
+            <p><strong>Hours:</strong>10:00 - 20:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram" onclick="window.location.href= 'https://www.instagram.com/bhumi_gupta_30?igsh=MXNsdXd5cndzdjhucA=='"></i>
+                    <i class="fab fa-pinterest-p"  onclick="window.location.href='https://in.pinterest.com'"></i>
+                    <i class="fab fa-youtube" onclick="window.location.href='https://www.youtube.com/'"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Delievery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="playstorelogo.jpg" alt="">
+                <img src="appleplaystore.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img class="pay" src="pay.jpg" alt="">
+        </div>
+
+        <div class="copyright">
+            <p> &#169 2024, Ambika, Bhumika WEB DEV. Project - HTML CSS JAVASCRIPT Ecommerce</p>
+        </div>
+    </footer>
+    
+                                                                <!-- javascript -->
+
+<script>
+    var MainImg = document.getElementById("MainImg")
+    var smallimg = document.getElementsByClassName("small-img")
+    smallimg[0].onclick = function(){
+        MainImg.src=smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src=smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src=smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src=smallimg[3].src;
+    }
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>

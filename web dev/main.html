@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <section id="header">
+        <!-- add logo image --> 
+        <a href="#"><img src="blisslogo.jpg" class="logo" alt=""></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="main.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li> 
+            </ul>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h4>Irresistable Offers</h4>
+        <h2>Super value deals</h2>
+        <h1>On all products</h1>
+        <p>get flat 25% off over first order</p>
+        <button onclick="window.location.href='shop.html'">Shop Now</button>
+       
+
+    </section>
+
+    <section id="feature" class=".section-p1">
+        <div class="fe-box">
+           <img src="Freeshipping.jpg" alt="FreeShip">
+           <h6>Free Shipping</h6>
+        </div>
+
+        <div class="fe-box">
+              <img src="7.jpg" alt="FreeShip">
+              <h6>24/7 Support</h6>
+        </div>
+        <div class="fe-box">
+              <img src="Happysell1.jpg" alt="happysell">
+              <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-box">
+              <img src="OnlineOrder.jpg" alt="onlineorder">
+              <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+              <img src="promotions.jpg" alt="promo">
+              <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+              <img src="Savemoney.jpg" alt="Save">
+              <h6>Save Money</h6>
+        </div>
+    </section>
+
+    <section id="product1" class=".section-p1">
+        <h2>Featured Shops</h2>
+        <p>Baked With Love, Freshness Of Life, Turning Pages!</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="bakeryshop.jpg" alt="" onclick="window.location.href='shopproduct.html'">
+                <div class="des">
+                    <span>blissful corner</span>
+                    <h5>The Cozy Oven</h5>
+                    <div class="star" id="star-rating">
+                        <!-- JavaScript will populate stars here -->
+                    </div>
+                    <p id="rating-output">Your Rating: 0</p>
+                    <h4>Starting at ₹99/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            
+            
+            
+            <div class="pro">
+                <img src="flowershop.jpg" alt="" onclick="window.location.href='shop.html'">
+                <div class="des">
+                    <span>blissful corner</span>
+                    <h5>Blooming Cactus</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Starting at ₹199/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+
+                                                          <!-- javascript -->
+
+                <script>
+                    const starContainer = document.getElementById('star-rating');
+                    const ratingOutput = document.getElementById('rating-output');
+                    let rating = 0;
+                
+                    // Function to update the rating display
+                    function updateStars() {
+                        starContainer.innerHTML = '';
+                        for (let i = 1; i <= 5; i++) {
+                            const star = document.createElement('span');
+                            star.innerHTML = i <= rating ? '★' : '☆'; // Filled star for selected rating, empty star for others
+                            star.style.cursor = 'pointer';
+                            star.style.fontSize = '24px';
+                            star.style.color = i <= rating ? '#FFD700' : '#ccc'; // Gold for selected, grey for unselected
+                
+                            // Event listener for each star
+                            star.addEventListener('click', () => {
+                                rating = i;
+                                ratingOutput.innerText = `Your Rating: ${rating}`;
+                                updateStars();
+                            });
+                            starContainer.appendChild(star);
+                        }
+                    }
+                
+                    // Initialize stars on page load
+                    updateStars();
+                        </script>
+            </div>
+            <div class="pro">
+                <img src="bookshop.jpg" alt="" onclick="window.location.href='blog.html'">
+                <div class="des">
+                    <span>blissful corner</span>
+                    <h5>Peace Of Pages</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Starting at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+        <h4>Special Combo</h4>
+        <h2>Upto<span>70% off</span> - One Self-help and Biography books</h2>
+        <button class="normal" onclick="window.location.href='about.html'">Explore More</button>
+    </section>
+
+    <section id="product1" class=".section-p1">
+        <h2>Featured Products</h2>
+        <p>Bestseller Products</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="donutimg.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5>Freshly baked donuts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹99/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="Cheesecake.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5> Cotton Milk Cheesecake</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹499/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="biscuits.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5>Crisp Chocolate Cookies</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="Cake.jpg" alt="">
+                <div class="des">
+                    <span>The Cozy Oven</span>
+                    <h5>Sponge Cakes</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹599/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="book1.jpg" alt="">
+                <div class="des">
+                    <span>Peace Of Pages</span>
+                    <h5>Biography on steve jobs</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹499/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="book2.jpg" alt="">
+                <div class="des">
+                    <span>Peace Of Pages</span>
+                    <h5>Self-help Book</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="book3.jpg" alt="">
+                <div class="des">
+                    <span>Peace Of Pages</span>
+                    <h5>Self-Improvement Book</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="book4.jpg" alt="">
+                <div class="des">
+                    <span>Peace Of Pages</span>
+                    <h5>Learning Commmunication Skills</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Only at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="Flower1.jpg" alt="">
+                <div class="des">
+                    <span>Blooming Cactus</span>
+                    <h5>Tulips bouquets</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Starting at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="flower2.jpg" alt="">
+                <div class="des">
+                    <span>Blooming Cactus</span>
+                    <h5> multicolor roses</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Starting at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="flower3.jpg" alt="">
+                <div class="des">
+                    <span>Blooming Cactus</span>
+                    <h5>Garden Box</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Starting at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="Flower4.jpg" alt="">
+                <div class="des">
+                    <span>Blooming Cactus</span>
+                    <h5>Elegant Red roses</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Starting at ₹299/-</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="sm-banner" class=".section-p1">
+        <div class="banner-box">
+            <h4>Crazy deals </h4>
+            <h2>Buy 1 get 1 free</h2>
+            <span>exchange offers available</span>
+            <button class="white">Learn More</button>
+        </div>
+        <div class="banner-box2" >
+            <h4>Gift Your Loved Ones</h4>
+            <h2>20% off on Roses</h2>
+            <span>Fresh flowers</span>
+            <button class="white">Learn More</button>
+        </div>
+    </section>
+
+    <section id="banner3">
+        <div class="banner-box" >
+            <h2>SEASONAL SALE</h2>
+            <h3>-50% OFF</h3>
+        </div>
+        <div class="banner-box banner-box2" >
+            <h2>SEASONAL SALE</h2>
+            <h3>-50% OFF</h3>
+        </div>
+        <div class="banner-box banner-box3" >
+            <h2>SEASONAL SALE</h2>
+            <h3>-50% OFF</h3>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1" src="blisslogo.jpg" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>strong>BML Munjal University, Kapriwas, Dharuhera, Gate No.2</p>
+            <p><strong>Phone:</strong> +91 9462396364 / +91 8797843073</p>
+            <p><strong>Hours:</strong>10:00 - 20:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram" onclick="window.location.href= 'https://www.instagram.com/bhumi_gupta_30?igsh=MXNsdXd5cndzdjhucA=='"></i>
+                    <i class="fab fa-pinterest-p" onclick="window.location.href='https://in.pinterest.com'"> </i>
+                    <i class="fab fa-youtube" onclick="window.location.href='https://www.youtube.com/'"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Delievery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="playstorelogo.jpg" alt="">
+                <img src="appleplaystore.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img class="pay" src="pay.jpg" alt="">
+        </div>
+
+        <div class="copyright">
+            <p> &#169 2024, Ambika, Bhumika WEB DEV. Project - HTML CSS JAVASCRIPT Ecommerce</p>
+        </div>
+    </footer>
+    
+    
+
+    <body>
+        <div id="product-list"></div>
+        <script src="script.js"></script>
+        <!-- <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            fetch('./api/data.json')
+              .then(response => response.json())
+              .then(data => displayProducts(data))
+              .catch(error => console.error('Error fetching JSON:', error));
+
+            function displayProducts(products) {
+                console.log(products)
+              const productList = document.getElementById('product-list');
+              productList.innerHTML = ''; // Clear previous content
+      
+              products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product');
+      
+                productDiv.innerHTML = `
+                  <h2>${product.name}</h2>
+                  <p>${product.description}</p>
+                  <p><strong>Price:</strong> $${product.price}</p>
+                `;
+      
+                productList.appendChild(productDiv);
+              });
+            }
+          });
+
+           console.log(productDiv); 
+        </script> -->
+
+        <script src="demo.js"></script>
+
+    </body>
+      
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <style>
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Product List</h1>
+  <div id="product-list"></div>
+
+  <script>
+    // Fetch JSON data
+    fetch('login.json')
+      .then(response => response.json())
+      .then(data => displayProducts(data))
+      .catch(error => console.error('Error fetching products:', error));
+
+    // Display products on the page
+    function displayProducts(products) {
+      const productList = document.getElementById('product-list');
+      productList.innerHTML = ''; // Clear previous content
+
+      products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+        productDiv.innerHTML = `
+          <img src="${Flower1.image}" alt="${product.name}">
+          <h2>${product.name}</h2>
+          <p>${product.description}</p>
+          <p><strong>Price:</strong> $${product.price}</p>
+        `;
+
+        productList.appendChild(JSON.parse(productDiv));
+        console.log(productDiv);
+      });
+    }
+  </script>
+
+</body>
+</html>

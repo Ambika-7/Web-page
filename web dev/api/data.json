@@ -1,0 +1,41 @@
+
+[
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 25.99,
+      "description": "This is a great product",
+      "image_url": "./api/flower1234.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 15.49,
+      "description": "A must-have product",
+      "image_url": "./api/book1234.jpg"
+    },
+
+    {
+      "id": 2,
+      "name": "Product 3",
+      "price": 15.49,
+      "description": "A must-have product",
+      "image_url": "./api/biscuits1234.jpg"
+    },
+
+    {
+      "id": 2,
+      "name": "Product 4",
+      "price": 15.49,
+      "description": "A must-have product",
+      "image_url": "./api/pie.jpg"
+    },
+
+    {
+      "id": 3,
+      "name": "Product 5",
+      "price": 40.00,
+      "description": "This product is amazing",
+      "image_url": "./api/bakery1234.jpg"
+    }
+] 
